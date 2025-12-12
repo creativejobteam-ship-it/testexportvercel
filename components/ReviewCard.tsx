@@ -1,5 +1,6 @@
 'use client';
 
+import React from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -12,7 +13,7 @@ interface ReviewCardProps {
   rating: number;
 }
 
-const ReviewCard = ({ name, role, image, content, rating }: ReviewCardProps) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({ name, role, image, content, rating }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}

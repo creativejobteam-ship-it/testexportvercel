@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 interface FeatureCardProps {
@@ -9,7 +9,7 @@ interface FeatureCardProps {
   description: string;
 }
 
-const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
