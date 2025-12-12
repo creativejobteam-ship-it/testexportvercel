@@ -1,8 +1,8 @@
 
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { initializeApp, FirebaseApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, Auth } from "firebase/auth";
+import { getFirestore, Firestore } from "firebase/firestore";
+import { getStorage, FirebaseStorage } from "firebase/storage";
 
 // Helper to safely access environment variables or provide fallback for demo/dev
 const getEnvVar = (key: string, fallback?: string) => {
@@ -37,11 +37,11 @@ const safeConfig = {
     measurementId: getEnvVar('VITE_FIREBASE_MEASUREMENT_ID', fallbackConfig.measurementId)
 };
 
-let app;
-let auth;
-let db;
-let storage;
-let googleProvider;
+let app: FirebaseApp | undefined;
+let auth: Auth | undefined;
+let db: Firestore | undefined;
+let storage: FirebaseStorage | undefined;
+let googleProvider: GoogleAuthProvider | undefined;
 
 try {
   // Only initialize if we have a valid config (basic check)
