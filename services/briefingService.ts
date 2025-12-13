@@ -77,8 +77,7 @@ export const createBriefingRecord = async (
                     data.status = 'SENT';
                 }
                 
-                // Spread data first, then override id if needed (though they should be same) to avoid TS error
-                return { ...data, id: existingDoc.id };
+                return { id: existingDoc.id, ...data };
             }
         } catch (e) {
             console.warn("Failed to check existing briefs:", e);
