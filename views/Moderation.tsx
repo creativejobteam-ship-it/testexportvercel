@@ -97,7 +97,7 @@ const Moderation: React.FC = () => {
                                         onClick={() => { setMinScore(0.8); setIsFilterOpen(false); }}
                                         className={`w-full text-left px-3 py-2 text-sm rounded-md ${minScore === 0.8 ? 'bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400 font-medium' : 'hover:bg-gray-50 dark:hover:bg-[#2a2a2a] text-gray-700 dark:text-[#ededed]'}`}
                                      >
-                                         High Confidence (>80%)
+                                         High Confidence (&gt;80%)
                                      </button>
                                  </div>
                              )}
